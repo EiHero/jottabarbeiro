@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbeiro Jotta Premium</title>
     <link rel="stylesheet" href="styles.css">
+<style>
+    /* Estilos para o modo escuro */
+    body.dark-mode {
+        background-color: #121212;
+        color: white;
+    }
+
+    body.dark-mode a {
+        color: black; /* Links com texto preto no modo escuro */
+    }
+
+    /* Estilos padrão (modo claro) */
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    a {
+        color: black; /* Links com texto preto no modo claro */
+    }
+</style>
 </head>
-<body>
+<body class="dark-mode">
     <header class="header">
-        <h1>Barbeiro Jotta Premium</h1>
-        <button id="theme-toggle">🌙</button>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Barbeiro Jotta Premium" class="logo">
+            <h1>Barbeiro Jotta Premium</h1>
+        </div>
+        <button id="theme-toggle">☀️</button>
     </header>
     <main>
         <section class="about">
@@ -17,15 +41,21 @@
             <p>
                 Localizada em <a href="https://www.google.com/maps/@-1.8027149,-53.4805242,3a,75y,284.74h,71.07t/data=!3m7!1e1!3m5!1sEvOGxZilQtNePgcfmGk4_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D18.929075527584388%26panoid%3DEvOGxZilQtNePgcfmGk4_g%26yaw%3D284.7355040898139!7i16384!8i8192!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Clique para ver no mapa</a>.
             </p>
+			<style>
+    a[href*="google.com/maps"] {
+        color: yellow !important; /* Sempre define a cor como amarelo */
+    }
+</style>
+
             <p>Ambiente climatizado com ar-condicionado, TV e banheiro para sua comodidade.</p>
         </section>
         <section class="services">
             <h2>Nossos Serviços</h2>
             <ul>
-                <li>Corte Masculino</li>
-                <li>Barba</li>
-                <li>Design de Cabelo</li>
-                <li>Hidratação</li>
+                <li><a href="tbl\tabela.html">Corte Masculino</a></li>
+                <li><a href="tabela.html">Barba</a></li>
+                <li><a href="tabela.html">Design de Cabelo</a></li>
+                <li><a href="tabela.html">Hidratação</a></li>
             </ul>
         </section>
         <section class="contact">
@@ -47,6 +77,19 @@
     <footer class="footer">
         <p>&copy; 2024 Barbeiro Jotta Premium. Todos os direitos reservados.</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Define o tema inicial como escuro
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+
+        // Alterna entre os temas claro e escuro
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
