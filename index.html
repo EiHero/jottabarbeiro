@@ -78,6 +78,27 @@
             box-shadow: 0 0 15px rgba(254, 180, 32, 0.8);
             transition: all 0.5s ease-in-out;
         }
+
+        /* Estilo para o slide de imagens */
+        .image-slider {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .image-slider img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .image-slider img.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="dark-mode">
@@ -116,9 +137,11 @@
             <h2>Depoimentos</h2>
             <p>"Atendimento de qualidade, ambiente confortável e profissionais excelentes!"</p>
         </section>
-        <section class="map">
-            <h2>Como Chegar</h2>
-            <iframe src="https://www.google.com/maps/@-1.8027149,-53.4805242,3a,75y,284.74h,71.07t/data=!3m7!1e1!3m5!1sEvOGxZilQtNePgcfmGk4_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D18.929075527584388%26panoid%3DEvOGxZilQtNePgcfmGk4_g%26yaw%3D284.7355040898139!7i16384!8i8192!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+		<h2>Destaques</h2>
+        <section class="image-slider" id="image-slider">
+            <img src="imagem1.jpg" alt="Imagem 1" class="active">
+            <img src="imagem2.jpg" alt="Imagem 2">
+            <img src="imagem3.jpg" alt="Imagem 3">
         </section>
     </main>
     <footer class="footer">
@@ -140,11 +163,8 @@
 
         // Função para abrir o Google Maps com rota
         function openGoogleMaps() {
-            // Coordenadas do destino ajustado
             const destination = "-1.8027149,-53.4807000"; // Novo ponto no outro lado da rua
-            // Esquema de URL do Google Maps
             const mapsURL = `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=driving`;
-            // Abrir o link
             window.open(mapsURL, "_blank");
         }
 
@@ -169,6 +189,17 @@
             });
             currentIndex = (currentIndex + 1) % buttons.length;
         }, 2000);
+
+        // Slide de imagens
+        const slider = document.getElementById('image-slider');
+        const images = slider.querySelectorAll('img');
+        let currentImageIndex = 0;
+
+        setInterval(() => {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }, 6000);
     </script>
 </body>
 </html>
