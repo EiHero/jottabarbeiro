@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seletor de Horas</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .hour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+      gap: 10px;
+      width: 90%;
+      max-width: 600px;
+    }
+    .hour {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .hour:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    .hour.selected {
+      background-color: white;
+      color: black;
+    }
+    .selection {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selecione a Hora</h1>
+  <div class="hour-grid">
+    <!-- Horas de 00 a 23 -->
+    <div class="hour" data-hour="00">00</div>
+    <div class="hour" data-hour="01">01</div>
+    <div class="hour" data-hour="02">02</div>
+    <div class="hour" data-hour="03">03</div>
+    <div class="hour" data-hour="04">04</div>
+    <div class="hour" data-hour="05">05</div>
+    <div class="hour" data-hour="06">06</div>
+    <div class="hour" data-hour="07">07</div>
+    <div class="hour" data-hour="08">08</div>
+    <div class="hour" data-hour="09">09</div>
+    <div class="hour" data-hour="10">10</div>
+    <div class="hour" data-hour="11">11</div>
+    <div class="hour" data-hour="12">12</div>
+    <div class="hour" data-hour="13">13</div>
+    <div class="hour" data-hour="14">14</div>
+    <div class="hour" data-hour="15">15</div>
+    <div class="hour" data-hour="16">16</div>
+    <div class="hour" data-hour="17">17</div>
+    <div class="hour" data-hour="18">18</div>
+    <div class="hour" data-hour="19">19</div>
+    <div class="hour" data-hour="20">20</div>
+    <div class="hour" data-hour="21">21</div>
+    <div class="hour" data-hour="22">22</div>
+    <div class="hour" data-hour="23">23</div>
+  </div>
+  <div class="selection">Hora selecionada: <span id="selected-hour">Nenhuma</span></div>
+
+  <script>
+    const hourElements = document.querySelectorAll('.hour');
+    const selectedHourDisplay = document.getElementById('selected-hour');
+
+    hourElements.forEach(hour => {
+      hour.addEventListener('click', () => {
+        // Remove a classe "selected" de todas as horas
+        hourElements.forEach(h => h.classList.remove('selected'));
+
+        // Adiciona a classe "selected" na hora clicada
+        hour.classList.add('selected');
+
+        // Atualiza a exibição da hora selecionada
+        selectedHourDisplay.textContent = hour.dataset.hour;
+      });
+    });
+  </script>
+</body>
+</html>
