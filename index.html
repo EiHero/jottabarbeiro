@@ -39,13 +39,13 @@
         <section class="about">
             <h2>Bem-vindo à Barbeiro Jotta Premium</h2>
             <p>
-                Localizada em <a href="https://www.google.com/maps/@-1.8027149,-53.4805242,3a,75y,284.74h,71.07t/data=!3m7!1e1!3m5!1sEvOGxZilQtNePgcfmGk4_g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D18.929075527584388%26panoid%3DEvOGxZilQtNePgcfmGk4_g%26yaw%3D284.7355040898139!7i16384!8i8192!5m1!1e1?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Clique para ver no mapa</a>.
+                Localizada em <a href="#" onclick="openGoogleMaps()" target="_blank">Clique para ver no mapa</a>.
             </p>
-			<style>
-    a[href*="google.com/maps"] {
-        color: yellow !important; /* Sempre define a cor como amarelo */
-    }
-</style>
+            <style>
+                a[href*="google.com/maps"] {
+                    color: yellow !important; /* Sempre define a cor como amarelo */
+                }
+            </style>
 
             <p>Ambiente climatizado com ar-condicionado, TV e banheiro para sua comodidade.</p>
         </section>
@@ -90,6 +90,16 @@
             body.classList.toggle('dark-mode');
             themeToggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
+
+        // Função para abrir o Google Maps com rota
+        function openGoogleMaps() {
+            // Coordenadas do destino
+            const destination = "-1.8027149,-53.4805242"; // Latitude e longitude do local da barbearia
+            // Esquema de URL do Google Maps
+            const mapsURL = `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=driving`;
+            // Abrir o link
+            window.open(mapsURL, "_blank");
+        }
     </script>
 </body>
 </html>
