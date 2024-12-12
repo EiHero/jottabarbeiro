@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbearia Premium</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para melhorar a interatividade */
+        .linha {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .linha:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,23 +28,29 @@
         <h3></h3>
     </header>
     <div class="tabela">
-        <div class="linha"><span>Social</span><span>R$15</span></div>
-        <div class="linha"><span>Degradê</span><span>R$20</span></div>
-        <div class="linha"><span>Degradê Navalhado</span><span>R$25</span></div>
-        <div class="linha"><span>Degradê na Shaver</span><span>R$30</span></div>
-        <div class="linha"><span>Taper Fade</span><span>R$20</span></div>
-        <div class="linha"><span>Low Fade</span><span>R$20</span></div>
-        <div class="linha"><span>Mid Fade</span><span>R$20</span></div>
-        <div class="linha"><span>High Fade</span><span>R$20</span></div>
-        <div class="linha"><span>Buzzcut</span><span>R$20</span></div>
-        <div class="linha"><span>Mullet</span><span>R$25</span></div>
-        <div class="linha"><span>Moicano</span><span>R$20</span></div>
-        <div class="linha"><span>Freestyle</span><span>R$10</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Social</span><span>R$15</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Degradê</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Degradê Navalhado</span><span>R$25</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Degradê na Shaver</span><span>R$30</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Taper Fade</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Low Fade</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Mid Fade</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>High Fade</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Buzzcut</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Mullet</span><span>R$25</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Moicano</span><span>R$20</span></div>
+        <div class="linha" onclick="selecionarCorte('hora.html')"><span>Freestyle</span><span>R$10</span></div>
     </div>
     <footer>
         <p>📞 (93)98433-1168 ⏰ 8HRS ÀS 22HRS</p>
         <p>NOSSA BARBEARIA FICA NO ENDEREÇO:</p>
         <p><strong>TRAV. AUGUSTO MONTENEGRO, 69 – BAIRRO DA PAZ</strong></p>
     </footer>
+
+    <script>
+        function selecionarCorte(url) {
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
