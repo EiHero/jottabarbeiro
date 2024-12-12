@@ -13,7 +13,7 @@
     }
 
     body.dark-mode a {
-        color: black; /* Links com texto preto no modo escuro */
+        color: white; /* Links no modo escuro */
     }
 
     /* Estilos padrão (modo claro) */
@@ -23,7 +23,11 @@
     }
 
     a {
-        color: black; /* Links com texto preto no modo claro */
+        color: black; /* Links no modo claro */
+    }
+
+    .theme-dependent-text {
+        color: inherit; /* Ajusta automaticamente a cor */
     }
 </style>
 </head>
@@ -39,13 +43,8 @@
         <section class="about">
             <h2>Bem-vindo à Barbeiro Jotta Premium</h2>
             <p>
-                Localizada em <a href="#" onclick="openGoogleMaps()" target="_blank">Clique para ver no mapa</a>.
+                Localizada em <a href="#" onclick="openGoogleMaps()" target="_blank" class="theme-dependent-text">Clique para ver no mapa</a>.
             </p>
-            <style>
-                a[href*="google.com/maps"] {
-                    color: yellow !important; /* Sempre define a cor como amarelo */
-                }
-            </style>
 
             <p>Ambiente climatizado com ar-condicionado, TV e banheiro para sua comodidade.</p>
         </section>
@@ -61,7 +60,7 @@
         <section class="contact">
             <h2>Entre em Contato</h2>
             <div class="buttons">
-                <a href="https://wa.me/+5593984331168?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio💇‍♂🪒🧔🏻‍♂️" target="_blank" class="btn whatsapp">WhatsApp</a>
+                <a href="https://wa.me/seunumero?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio" target="_blank" class="btn whatsapp">WhatsApp</a>
                 <a href="https://www.instagram.com/seuinsta" target="_blank" class="btn instagram">Instagram</a>
             </div>
         </section>
