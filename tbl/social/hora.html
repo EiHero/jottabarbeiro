@@ -121,7 +121,7 @@
 
         // Define a ação do botão de confirmação
         confirmButton.onclick = () => {
-          const message = `*Olá gostaria de agendar um Corte Social às ${selectedHour} aguardo a confirmação do agendamento*.`;
+          const message = `*Olá gostaria de agendar um Corte Social às ${selectedHour}:00hrs aguardo a confirmação do agendamento*.`;
           const whatsappLink = `https://wa.me/5593984331168?text=${encodeURIComponent(message)}`;
           window.location.href = whatsappLink;
         };
