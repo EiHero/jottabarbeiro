@@ -14,20 +14,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       font-family: Arial, sans-serif;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     h1 {
       margin-bottom: 20px;
       text-align: center;
+      font-size: 1.5rem;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
       gap: 10px;
-      width: 90%;
+      width: 100%;
       max-width: 600px;
     }
 
@@ -35,9 +38,9 @@
       background-color: rgba(255, 255, 255, 0.1);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       border-radius: 10px;
-      font-size: 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s;
     }
@@ -55,6 +58,8 @@
       margin-top: 20px;
       display: flex;
       gap: 10px;
+      justify-content: center;
+      width: 100%;
     }
 
     .button {
@@ -67,6 +72,8 @@
       font-size: 1rem;
       font-weight: bold;
       transition: background-color 0.3s;
+      flex: 1;
+      max-width: 150px;
     }
 
     .button:hover {
