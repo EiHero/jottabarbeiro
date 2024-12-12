@@ -45,6 +45,9 @@
             padding: 5px 15px;
             border-radius: 10px;
             transition: all 0.3s ease-in-out;
+            transform: translateY(-5px); /* Destaque permanente */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Efeito permanente */
+            color: rgb(254, 180, 32); /* Cor de destaque permanente */
         }
 
         /* Efeito 3D para os serviços */
@@ -58,14 +61,6 @@
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             z-index: -1;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Estilo quando o item da lista é focado ou em hover */
-        .services ul li a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            color: #f4a261; /* Cor de destaque */
         }
 
         /* Estilo 3D no modo escuro */
@@ -75,6 +70,13 @@
 
         .theme-dependent-text {
             color: inherit; /* Ajusta automaticamente a cor */
+        }
+
+        /* Destaque dos botões e links */
+        .btn.highlight, .services ul li a.highlight {
+            background-color: rgba(254, 180, 32, 0.8);
+            box-shadow: 0 0 15px rgba(254, 180, 32, 0.8);
+            transition: all 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -145,6 +147,28 @@
             // Abrir o link
             window.open(mapsURL, "_blank");
         }
+
+        // Destaque sequencial dos links de serviços
+        const serviceLinks = document.querySelectorAll('.services ul li a');
+        let serviceIndex = 0;
+
+        setInterval(() => {
+            serviceLinks.forEach((link, index) => {
+                link.classList.toggle('highlight', index === serviceIndex);
+            });
+            serviceIndex = (serviceIndex + 1) % serviceLinks.length;
+        }, 2000);
+
+        // Destaque sequencial dos botões de contato
+        const buttons = document.querySelectorAll('.btn');
+        let currentIndex = 0;
+
+        setInterval(() => {
+            buttons.forEach((button, index) => {
+                button.classList.toggle('highlight', index === currentIndex);
+            });
+            currentIndex = (currentIndex + 1) % buttons.length;
+        }, 2000);
     </script>
 </body>
 </html>
