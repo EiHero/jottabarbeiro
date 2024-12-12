@@ -49,6 +49,22 @@
       font-size: 1.2rem;
       text-align: center;
     }
+    .confirm-button {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: yellow;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .confirm-button:hover {
+      background-color: #ffcc00;
+    }
   </style>
 </head>
 <body>
@@ -81,10 +97,12 @@
     <div class="hour" data-hour="23">23</div>
   </div>
   <div class="selection">Hora selecionada: <span id="selected-hour">Nenhuma</span></div>
+  <button class="confirm-button" id="confirm-button">Confirma?</button>
 
   <script>
     const hourElements = document.querySelectorAll('.hour');
     const selectedHourDisplay = document.getElementById('selected-hour');
+    const confirmButton = document.getElementById('confirm-button');
 
     hourElements.forEach(hour => {
       hour.addEventListener('click', () => {
@@ -95,7 +113,18 @@
         hour.classList.add('selected');
 
         // Atualiza a exibição da hora selecionada
-        selectedHourDisplay.textContent = hour.dataset.hour;
+        const selectedHour = hour.dataset.hour;
+        selectedHourDisplay.textContent = selectedHour;
+
+        // Exibe o botão de confirmação
+        confirmButton.style.display = 'inline-block';
+
+        // Define a ação do botão de confirmação
+        confirmButton.onclick = () => {
+          const message = `Olá gostaria de agendar Corte Social às ${selectedHour} aguardo a confirmação do agendamento.`;
+          const whatsappLink = `https://wa.me/5593984331168?text=${encodeURIComponent(message)}`;
+          window.location.href = whatsappLink;
+        };
       });
     });
   </script>
