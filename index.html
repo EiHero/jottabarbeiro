@@ -5,44 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbeiro Jotta Premium</title>
     <link rel="stylesheet" href="styles.css">
-<style>
-    /* Estilos para o modo escuro */
-    body.dark-mode {
-        background-color: #121212;
-        color: white;
-    }
+    <style>
+        /* Estilos para o modo escuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
 
-    body.dark-mode a {
-        color: white; /* Links no modo escuro */
-    }
+        body.dark-mode a {
+            color: white; /* Links no modo escuro */
+        }
 
-    body.dark-mode .btn {
-        color: white; /* Botões no modo escuro */
-    }
+        body.dark-mode .btn {
+            color: white; /* Botões no modo escuro */
+        }
 
-    /* Estilos padrão (modo claro) */
-    body {
-        background-color: white;
-        color: black;
-    }
+        /* Estilos padrão (modo claro) */
+        body {
+            background-color: white;
+            color: black;
+        }
 
-    a {
-        color: black; /* Links no modo claro */
-    }
+        a {
+            color: black; /* Links no modo claro */
+        }
 
-    .btn {
-        color: black; /* Botões no modo claro */
-    }
+        .btn {
+            color: black; /* Botões no modo claro */
+        }
 
-    /* Links de serviços sempre pretos */
-    .services ul li a {
-        color: black !important;
-    }
+        /* Links de serviços sempre pretos */
+        .services ul li a {
+            color: black !important;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            position: relative;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+        }
 
-    .theme-dependent-text {
-        color: inherit; /* Ajusta automaticamente a cor */
-    }
-</style>
+        /* Efeito 3D para os serviços */
+        .services ul li a::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            z-index: -1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Estilo quando o item da lista é focado ou em hover */
+        .services ul li a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #f4a261; /* Cor de destaque */
+        }
+
+        /* Estilo 3D no modo escuro */
+        body.dark-mode .services ul li a::before {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-dependent-text {
+            color: inherit; /* Ajusta automaticamente a cor */
+        }
+    </style>
 </head>
 <body class="dark-mode">
     <header class="header">
@@ -58,7 +92,6 @@
             <p>
                 Localizada em <a href="#" onclick="openGoogleMaps()" target="_blank" class="theme-dependent-text">Clique para ver no mapa</a>.
             </p>
-
             <p>Ambiente climatizado com ar-condicionado, TV e banheiro para sua comodidade.</p>
         </section>
         <section class="services">
