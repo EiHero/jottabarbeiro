@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    background-image: url('sua-imagem-de-fundo.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+}
+
+header .banner {
+    margin-bottom: 20px;
+}
+
+header .banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Para bordas arredondadas, se desejar */
+}
+
+header h2 {
+    font-size: 2rem;
+    color: #FFA500;
+}
+
+header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.tabela {
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 2px solid #FFA500;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+footer strong {
+    color: #FFA500;
+}
