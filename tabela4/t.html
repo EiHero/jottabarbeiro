@@ -4,80 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página em Construção</title>
+    <title>Novidade Indisponível</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f4f4f4;
-            color: #333;
-            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #000;
+            color: white;
             text-align: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            color: #feb41f;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 20px;
         }
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: white;
-            background-color: #333;
-            border: none;
-            border-radius: 5px;
+        a {
             text-decoration: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .button:hover {
+            color: white;
+            font-size: 1.2rem;
             background-color: #feb41f;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
 
-        .button.green {
-            background-color: green;
+        a:hover {
+            background-color: #e6a000;
         }
 
-        .button.green:hover {
-            background-color: #32cd32;
+        .banner {
+            margin-bottom: 40px;
         }
 
-        img {
+        .banner img {
             max-width: 100%;
             height: auto;
-            margin-bottom: 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-    <img src="em-construcao.png" alt="Página em Construção"> <!-- Substitua pela imagem desejada -->
-    <h1>Opa! Essa novidade ainda não está disponível.</h1>
-    <p>Estamos trabalhando para trazer essa funcionalidade o mais rápido possível. Fique atento às atualizações!</p>
-    <div class="buttons">
-        <a href="https://eihero.github.io/jottabarbeiro/index.html" class="button">Voltar à Página Inicial</a>
-        <a href="https://wa.me/5593984331168" class="button green">Fale Conosco pelo WhatsApp</a>
-    </div>
+    <header class="banner">
+        <img src="seu-banner2.jpg" alt="Barbearia Premium"> <!-- Substitua pelo caminho da sua imagem -->
+    </header>
+
+    <h1>Opa! Essa novidade ainda não está disponível</h1>
+    <p>Estamos trabalhando duro para trazer algo incrível para você. Volte em breve!</p>
+    <a href="index.html">Voltar para a página inicial</a>
 </body>
 
 </html>
