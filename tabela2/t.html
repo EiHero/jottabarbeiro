@@ -1,98 +1,54 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Barbearia Premium</title>
-
     <link rel="stylesheet" href="styles.css">
-
     <style>
-
-        /* Estilo para melhorar a interatividade */
-
         .linha {
-
             display: flex;
-
             justify-content: space-between;
-
             padding: 10px;
-
             border-bottom: 1px solid #ccc;
-
             cursor: pointer;
-
         }
 
         .linha:hover {
-
             background-color: #feb41f;
-
         }
-
     </style>
-
 </head>
 
 <body>
-
     <header>
-
         <div class="banner">
-
             <img src="seu-banner2.jpg" alt="Barbearia Premium"> <!-- Substitua pelo caminho da sua imagem -->
-
         </div>
-
-        <h2></h2>
-
-        <h3></h3>
-
     </header>
 
     <div class="tabela">
-
-        <div class="linha" onclick="selecionarCorte('barba/hora.html')"><span>Barba</span><span>R$10</span></div>
-
-        <div class="linha" onclick="selecionarCorte('nevou/hora.html')"><span>Nevou</span><span>R$70</span></div>
-
-        <div class="linha" onclick="selecionarCorte('pigmentação/hora.html')"><span>Pigmentação</span><span>R$15</span></div>
-
-        <div class="linha" onclick="selecionarCorte('degrade_shaver.html')"><span>Degradê na Shaver</span><span>R$50</span></div>
-
-        <div class="linha" onclick="selecionarCorte('taper_fade.html')"><span>Taper Fade</span><span>R$5</span></div>
-
-        <div class="linha" onclick="selecionarCorte('low_fade.html')"><span>Low Fade</span><span>R$5</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Barba')"><span>Barba</span><span>R$10</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Nevou')"><span>Nevou</span><span>R$70</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Pigmentação')"><span>Pigmentação</span><span>R$15</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Degradê na Shaver')"><span>Degradê na Shaver</span><span>R$50</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Taper Fade')"><span>Taper Fade</span><span>R$5</span></div>
+        <div class="linha" onclick="selecionarCorte('agendamento.html', 'Low Fade')"><span>Low Fade</span><span>R$5</span></div>
     </div>
 
     <footer>
-
         <p>📞 (93)98433-1168 ⏰ 8HRS ÀS 22HRS</p>
-
         <p>NOSSA BARBEARIA FICA NO ENDEREÇO:</p>
-
         <p><strong>TRAV. AUGUSTO MONTENEGRO, 69 – BAIRRO DA PAZ</strong></p>
-
     </footer>
 
-
-
     <script>
-
-        function selecionarCorte(url) {
-
+        function selecionarCorte(url, corte) {
+            localStorage.setItem('corteSelecionado', corte);
             window.location.href = url;
-
         }
-
     </script>
-
 </body>
 
 </html>
